@@ -13,7 +13,17 @@ class CreateTableHallNtc extends Migration
      */
     public function up()
     {
-        //
+        Schema::Create('hall_ntc',function(Blueprint $table){
+            $table->integer('ID')->primary();
+            $table->string('Message',1000)->nullable(false);
+            $table->date('StartDat')->nullable(false);
+            $table->date('EndDat')->nullable(false);
+            $table->integer('Type')->nullable(false);
+            $table->string('Hall',50)->nullable(false);
+            $table->integer('UploaderID')->nullable(false);
+            $table->foreign('Type')->references('ID')->on('user_type');
+            $table->foreign('UploaderID')->references('ID')->on('admin_up_table');
+        });
     }
 
     /**
@@ -23,6 +33,6 @@ class CreateTableHallNtc extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('hall_ntc');
     }
 }

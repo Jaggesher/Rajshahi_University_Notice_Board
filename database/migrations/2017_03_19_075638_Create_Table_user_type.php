@@ -12,8 +12,11 @@ class CreateTableUserType extends Migration
      * @return void
      */
     public function up()
-    {
-        //
+    {   
+        Schema::Create('user_type',function(Blueprint $table){
+            $table->integer('ID')->primary();
+            $table->string('CatagoryName', 20);
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class CreateTableUserType extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('user_type');
     }
 }
