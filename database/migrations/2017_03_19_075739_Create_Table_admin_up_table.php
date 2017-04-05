@@ -16,7 +16,7 @@ class CreateTableAdminUpTable extends Migration
         Schema::Create('admin_up_table',function(Blueprint $table){
             $table->integer('ID')->primary();
             $table->string('UserID',10)->nullable(false);
-            $table->string('Pass',10)->nullable(false);
+            $table->string('Pass',60)->nullable(false);
             $table->string('Name',30)->nullable(false);
             $table->string('Type',10)->nullable(false);
         });

@@ -17,7 +17,7 @@ class CreateTableAccount extends Migration
             $table->increments('ID');
             $table->string('UserID',10)->nullable(false)->unique();
             $table->string('Name',30)->nullable(false);
-            $table->string('Pass',30)->nullable(false);
+            $table->string('Pass',60)->nullable(false);
             $table->date('Birth')->nullable(false);
             $table->string('Dept',50)->nullable(false);
             $table->string('Hall',50)->nullable(true);
